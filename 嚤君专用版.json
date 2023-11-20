@@ -48,39 +48,17 @@
 	"itemUrlRegex":"url\":\"(.*?)\""
 },
 {
-    "configName":"玉米(推荐)",
-	"extensions":"undetermined",
-	"configType":"WebPage",
-	"searchUrl":"http://yumi.ghlyys.com/api.php/app/search?pg=1&text={SearchWord}",
-	"searchNameRegex":"Unicode.decode(\"vod_name\":\"(.*?)\",)",
-	"searchUrlRegex":"\"vod_id\":(.*?),",
-	"searchTypeRegex":"Unicode.decode(\"vod_class\":\"(.*?)\",)",
-	"searchYearRegex":"\"vod_year\":\"(.*?)\",",
-	"searchPictureRegex":"\"vod_pic\":\"(.*?)\",",
-	"searchStateRegex":"Unicode.decode(\"vod_remarks\":\"(.*?)\",)",
-	"itemUrl":"http://yumi.ghlyys.com/api.php/app/video_detail?id={SearchUrlOrId}",
-	"itemRangeRegex":"\"vod_url_with_player\":\\[([\\w\\W]*?)\\]",
-	"itemRangeSplit":"\\},\\{",
-	"itemRangeSplitPick":"YuMi-vip",
-	"itemNameRegex":"Unicode.decode(([^\"]*?)\\$.*?[#\"]{1})",
-	"itemUrlRegex":"[^\"]*?\\$(.*?)[#\"]{1}",
-	"realTrigger":"notContains[.m3u8]",
-	"realUrl":"http://61.147.93.21:8090/index.php?url={ItemUrlOrId}",
-	"realUrlRegex":"\"url\":\\s?\"(.*?)\""
-
-},
-{
 	"configName":"迷你(推荐)",
 	"configType":"WebPage",
 	"extensions":"undetermined",
 	"realUrl":"{ItemApi}{ItemUrlOrId}",
-	"realUrlRegex":"url\":\"(.*?)\"",
+	"realUrlRegex":"\"url\": \"(.*?)\"",
 	"realTrigger":"notContains[.m3u8]",
 	"itemApiRegex":"Unicode.decode(parse_api\":\"(.*?)\")",
 	"itemNameRegex":"Unicode.decode(([^\"]*?)\\$.*?[#\"]{1})",
-	"itemRangeRegex":"\"vod_url_with_player\":\\[([\\w\\W]*?)\\]",
+	"itemRangeRegex":"Unicode.decode(\"vod_url_with_player\":\\[([\\w\\W]*?)\\])",
 	"itemRangeSplit":"\\},\\{",
-	"itemRangeSplitPick":"Cloud@iqiyi@qq@youku@bfzym3u8@juquan4k",
+	"itemRangeSplitPick":"TU2",
 	"itemUrl":"http://www.miniku.cc/xgapp.php/v1/video_detail?id={SearchUrlOrId}",
 	"itemUrlRegex":"[^\"]*?\\$(.*?)[#\"]{1}",
 	"searchNameRegex":"Unicode.decode(vod_name\":\"(.*?)\")",
@@ -90,22 +68,6 @@
 	"searchUrl":"http://www.miniku.cc/xgapp.php/v1/search?pg=1&text={SearchWord}",
 	"searchUrlRegex":"vod_id\":(\\d*)",
 	"searchYearRegex":"vod_year\":\"(\\d*)"
-},
-{
-	"configName":"米侠(推荐)",
-	"configType":"WebPage",
-	"extensions":"undetermined",
-	"searchUrl":"https://t.mixiaoqi.com/appto/v1/vod/getVodSearch?wd={SearchWord}&page=1&type",
-	"searchNameRegex":"vod_name\":\"(.*?)\"",
-	"searchPictureRegex":"vod_pic\":\"(.*?)\"",
-	"searchStateRegex":"Unicode.decode(vod_remarks\":\"(.*?)\")",
-	"searchTypeRegex":"Unicode.decode(vod_class\":\"(.*?)\")",
-	"searchUrlRegex":"vod_id\":(\\d*)",
-	"searchYearRegex":"vod_year\":\"(\\d*)",
-	"itemUrl":"https://t.mixiaoqi.com/appto/v1/vod/getVod?id={SearchUrlOrId}&__platform=android&__ic=2D%2F5UTMdJK%2FgBejW%2Fo03Yr4gj8SDhz8wUpTcu8jFrlDsMj5hfZuT6KFyjBdMzMkQMFPLNmF08dNvPiTwdaC3ErGSQz4tjfFVXuohpFeRu%2Byrqh8CKTYs5UNrK67e169wRjxN%2F%2B7X8BxLVYPfPpXF1Q%3D%3D",
-	"itemRangeRegex":"Unicode.decode(vod_play_list\":([\\w\\W]*?)\\])",
-	"itemUrlRegex":"\"url\":\"(.*?)\"",
-	"itemNameRegex":"\"name\":\"(.*?)\""
 },
 {
 	"configName":"徕米(推荐)",
@@ -121,11 +83,11 @@
 	"itemUrl":"https://www.lmtv.cc/api.php/v1.vod/detail?vod_id={SearchUrlOrId}",
 	"itemRangeRegex":"Unicode.decode(vod_play_list\":([\\w\\W]*?)\\}\\]\\}\\])",
 	"itemRangeSplit":"\\]\\},\\{",
-	"itemRangeSplitPick":"ffm3u8@lzm3u8@qiyi@youku@mgtv@qq",
+	"itemRangeSplitPick":"qiyi@youku@mgtv@qq@ffm3u8",
 	"itemNameRegex":"Unicode.decode(name\":\"(.*?)\",)",
 	"itemUrlRegex":"Unicode.decode(name\":\".*?\",\"url\":\"(.*?)\",)",
 	"itemApiRegex":"String.replace[..@.](Html.decode(\"parse2\":\\s?\"\\s?(.*?)[,\"]{1}.*,))",
-	"realUrl":"https://data.m3u8.in/api/api.php?from=qq&v={ItemUrlOrId}",
+	"realUrl":"https://data.m3u8.in/api/api.php?from=qiyi&v={ItemUrlOrId}",
 	"realUrlRegex":"\"url\":\\s?\"(.*?)\"",
 	"realTrigger":"all"
 },
@@ -290,13 +252,6 @@
 	"searchUrl":"https://www.hongniuzy2.com/api.php/provide/vod/from/hnm3u8/?ac=detail&wd={SearchWord}"
 },
 {
-	"configName":"ZN(Mac)",
-	"configType":"MacCMS",
-	"extensions":"undetermined",
-	"matchSource":"anySource",
-	"searchUrl":"http://38.49.39.124:37264/api.php/provide/vod/from/lzm3u8/?ac=detail&wd={SearchWord}"
-},
-{
 	"configName":"无尽(Mac)",
 	"configType":"MacCMS",
 	"extensions":"undetermined",
@@ -326,13 +281,6 @@
 	"searchUrl":"https://api.kuaifan.tv/api.php/provide/vod?ac=detail&wd={SearchWord}"
 },
 {
-	"configName":"暴风(Mac)",
-	"configType":"MacCMS",
-	"extensions":"undetermined",
-	"matchSource":"anySource",
-	"searchUrl":"https://bfzyapi.com/api.php/provide/vod?ac=detail&wd={SearchWord}"
-},
-{
 	"configName":"印迷(Mac)",
 	"configType":"MacCMS",
 	"extensions":"undetermined",
@@ -347,14 +295,6 @@
 	"searchUrl":"https://jszyapi.com/api.php/provide/vod/?ac=detail&wd={SearchWord}"
 },
 {
-	"configName":"ZNJ(Mac)",
-	"configType":"MacCMS",
-	"extensions":"unknown",
-	"matchSource":"anySource",
-	"realUrl":"https://jx.jsonplayer.com/player/?url={ItemUrlOrId}",
-	"searchUrl":"http://154.12.90.205/api.php/provide/vod/?ac=detail&wd={SearchWord}"
-},
-{
 "configName":"光速(Mac)",
 "configType": "MacCMS",
 "extensions": "undetermined",
@@ -367,13 +307,6 @@
 "extensions": "unknown",
 "matchSource":"anySource",
 "searchUrl":"https://caiji.kczyapi.com/api.php/provide/vod/from/kcm3u8/?ac=detail&wd={SearchWord}"
-},
-{
-"configName":"推特(Mac)",
-"configType": "MacCMS",
-"extensions": "undetermined",
-"matchSource":"anySource",
-"searchUrl":"https://api.tttv.tv/api.php/provide/vod/?ac=list&wd={SearchWord}&ac=detail"
 },
 {
 	"configName":"金鹰(Mac)",
@@ -404,16 +337,9 @@
 "searchUrl":"https://49zyw.com/api.php/provide/vod/?ac=detail&wd={SearchWord}"
 },
 {
-"configName":"图影(Mac)",
-"configType": "MacCMS",
-"extensions": "undetermined",
-"matchSource":"anySource",
-"searchUrl":"https://cj.vodimg.top/api.php/provide/vod/?ac=detail&wd={SearchWord}"
-},
-{
 "configName":"虎牙(Mac)",
 "configType": "MacCMS",
-"extensions": "undetermined",
+"extensions": "unknown",
 "matchSource":"anySource",
 "searchUrl":"https://www.huyaapi.com/api.php/provide/vod/?ac=detail&wd={SearchWord}"
 
@@ -421,7 +347,7 @@
 {
 "configName":"速播(Mac)",
 "configType": "MacCMS",
-"extensions": "undetermined",
+"extensions": "unknown",
 "matchSource":"anySource",
 "searchUrl":"https://subocaiji.com/api.php/provide/vod/?ac=detail&wd={SearchWord}"
 
@@ -445,13 +371,13 @@
 {
 "configName":"火狐(Mac)",
 "configType": "MacCMS",
-"extensions": "undetermined",
+"extensions": "unknown",
 "matchSource":"anySource",
 "searchUrl":"https://hhzyapi.com/api.php/provide/vod/?ac=detail&wd={SearchWord}"
 
 },
 {
-"configName":"刺客(Mac)",
+"configName":"CK(Mac)",
 "configType": "MacCMS2",
 "extensions": "undetermined",
 "matchSource":"anySource",
@@ -486,11 +412,33 @@
 	"searchUrl":"https://taopianapi.com/cjapi/mc/vod/json?ac=detail&wd={SearchWord}"
 },
 {
+	"configName":"天堂(Mac)",
 	"configType":"MacCMS",
-	"searchUrl":"http://cms.jialiangos.com/api.php/provide/vod?ac=detail&wd={SearchWord}",
+	"extensions":"unknown",
 	"matchSource":"anySource",
+	"searchUrl":"http://vipmv.cc/api.php/provide/vod?ac=detail&wd={SearchWord}",
+	"realUrl":"https://jx.jsonplayer.com/player/?url={ItemUrlOrId}"
+},
+{
+	"configName":"最大(Mac)",
+	"configType":"MacCMS",
 	"extensions":"undetermined",
-	"configName":"移动盘(Mac)"
+	"matchSource":"anySource",
+	"searchUrl":"http://zuidazy.me/api.php/provide/vod?ac=detail&wd={SearchWord}"
+},
+{
+	"configName":"天翼(Mac)",
+	"configType":"MacCMS",
+	"extensions":"unknown",
+	"matchSource":"anySource",
+	"searchUrl":"https://www.911ysw.top/tianyi.php/provide/vod?ac=detail&wd={SearchWord}"
+},
+{
+	"configName":"TvYb(Mac)",
+	"configType":"MacCMS",
+	"extensions":"undetermined",
+	"matchSource":"anySource",
+	"searchUrl":"http://www.tvyb10.com/api.php/provide/vod/?ac=detail&wd={SearchWord}?Header={\"User-Agent\":\"{WebViewUserAgent}\"}"
 }
 	],
 	"searchManager":{
