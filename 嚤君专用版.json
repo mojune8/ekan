@@ -1,6 +1,6 @@
 {
-    "targetVersion":5,
-	"version4Link":"",
+    "targetVersion":6,
+	"version5Link":"",
 	"name":"嚤の君",
 	"author":"嚤の君",
 	"contact":"397333220",
@@ -8,27 +8,6 @@
 	"editable":true,
 	#搜索配置
 	"searchConfig":[
-{
-	"configName":"玉米(app)",
-	"configType":"WebPage",
-	"extensions":"undetermined",
-	"searchUrl":"https://ym.yert.video/yumi/v2/search/video?word={SearchWord}&page=1&t={Date10}&store=ymdy&version=5.2.2",
-	"searchRangeRegex":"",
-	"searchNameRegex":"\"name\":\"(.*?)\",",
-	"searchUrlRegex":"\"id\":(\\d*),",
-	"searchPictureRegex":"\"img\":\"(.*?)\",",
-	"searchTypeRegex":"\"area\":\"(.*?)\",",
-	"searchYearRegex":"\"year\":\"(.*?)\",",
-	"searchStateRegex":"\"updateText\":\"(.*?)\",",
-	"itemUrl":"https://ym.yert.video/yumi/v2/video/episodes?id={SearchUrlOrId}&t={Date10}&store=ymdy&version=5.2.2",
-	"itemRangeRegex":"plays\":([\\w\\W]*?\\}\\]\\})",
-	"itemRangeSplit":"\\}\\]",
-	"itemRangeSplitPick":"m3u8@qq@iqiyi",
-	"itemNameRegex":"name\":\"(.*?)\"",
-	"itemUrlRegex":"\"playUrl\":\"(.*?)\",",
-	"itemApiRegex":"https://jx.jsonplayer.com/player/?url=",
-	"realUrl":"{ItemApi}{ItemUrlOrId}"
-},
 {
 	"configName":"花猪(app)",
 	"configType":"WebPage",
@@ -69,92 +48,101 @@
 	"realExtensionsRegex":"",
 	"finalUrl":"{RealUrlOrId}"
 },
-#模板
 {
-"configName":"南坊(app)",
-"configType": "WebPage",
-"extensions": "undetermined",
-
-"searchUrl": "http://www.xn--od1a98zlyg68g.com/appto/v1/vod/getVodSearch?wd={SearchWord}&page=1&type",
-"searchRangeRegex": "",
-"searchNameRegex": "vod_name\":\"(.*?)\"",
-"searchUrlRegex": "vod_id\":(\\d*),",
-"searchPictureRegex": "vod_pic\":\"(.*?)\"",
-"searchTypeRegex": "vod_type_name\":\"(.*?)\"",
-"searchYearRegex": "vod_year\":\"(\\d*)\"",
-"searchStateRegex": "vod_remarks\":\"(.*?)\"",
-
-"itemUrl": "http://www.xn--od1a98zlyg68g.com/appto/v1/vod/getVod?__platform=android&__ic=mssY6U737YHaGX4OjrBG8dnK8QrSnWRVo24nsmBF3LCxbm6oI23agJvbenxkbUneTU7oe4X%2F0N2hN%2BPw%2FxQiIVH%2BG7P4Yx0pESg0pQuc6PET1TqEiszTGAj%2Bay0GAXU1FlfHtuzo8zyrK1KkerSdLQ%3D%3D&id={SearchUrlOrId}",
-"itemRangeRegex":"vod_play_list([\\w\\W]*)\\]\\}\\]",
-"itemRangeSplit": "\\]\\},\\{",
-"itemRangeSplitPick": "主线[A]@主线[B]@备用[E]",
-"itemNameRegex": "name\":\"(.*?)\"",
-"itemUrlRegex": "url\":\"(.*?)\"",
-"itemApiRegex": "parse\":\"(.*?)\"",
-"realUrl": "{ItemApi}{ItemUrlOrId}"
-},
-{
-	"configName":"迷你(推荐)",
+	"configName":"EMO(app)",
 	"configType":"WebPage",
 	"extensions":"undetermined",
-	"realUrl":"{ItemApi}{ItemUrlOrId}",
-	"realUrlRegex":"\"url\": \"(.*?)\"",
-	"realTrigger":"notContains[.m3u8]",
-	"itemApiRegex":"Unicode.decode(parse_api\":\"(.*?)\")",
-	"itemNameRegex":"Unicode.decode(([^\"]*?)\\$.*?[#\"]{1})",
-	"itemRangeRegex":"Unicode.decode(\"vod_url_with_player\":\\[([\\w\\W]*?)\\])",
-	"itemRangeSplit":"\\},\\{",
-	"itemRangeSplitPick":"TU2",
-	"itemUrl":"http://www.miniku.cc/xgapp.php/v1/video_detail?id={SearchUrlOrId}",
-	"itemUrlRegex":"[^\"]*?\\$(.*?)[#\"]{1}",
-	"searchNameRegex":"Unicode.decode(vod_name\":\"(.*?)\")",
-	"searchPictureRegex":"vod_pic\":\"(.*?)\"",
-	"searchStateRegex":"Unicode.decode(vod_remarks\":\"(.*?)\")",
-	"searchTypeRegex":"Unicode.decode(vod_class\":\"(.*?)\")",
-	"searchUrl":"http://www.miniku.cc/xgapp.php/v1/search?pg=1&text={SearchWord}",
-	"searchUrlRegex":"vod_id\":(\\d*)",
-	"searchYearRegex":"vod_year\":\"(\\d*)"
-},
-{
-	"configName":"徕米(推荐)",
-	"configType":"WebPage",
-	"extensions":"undetermined",
-	"searchUrl":"https://www.lmtv.cc/api.php/v1.vod?wd={SearchWord}",
+	"searchUrl":"http://156.242.10.185:8871/mogai_api.php/v1.vod?page=1&limit=10&wd={SearchWord}",
 	"searchNameRegex":"Unicode.decode(vod_name\":\"(.*?)\")",
 	"searchPictureRegex":"vod_pic\":\"(.*?)\"",
 	"searchStateRegex":"Unicode.decode(vod_remarks\":\"(.*?)\")",
 	"searchTypeRegex":"Unicode.decode(vod_class\":\"(.*?)\")",
 	"searchUrlRegex":"vod_id\":(\\d*)",
 	"searchYearRegex":"vod_year\":\"(\\d*)",
-	"itemUrl":"https://www.lmtv.cc/api.php/v1.vod/detail?vod_id={SearchUrlOrId}",
-	"itemRangeRegex":"Unicode.decode(vod_play_list\":([\\w\\W]*?)\\}\\]\\}\\])",
-	"itemRangeSplit":"\\]\\},\\{",
-	"itemRangeSplitPick":"qiyi@youku@mgtv@qq@ffm3u8",
-	"itemNameRegex":"Unicode.decode(name\":\"(.*?)\",)",
-	"itemUrlRegex":"Unicode.decode(name\":\".*?\",\"url\":\"(.*?)\",)",
-	"itemApiRegex":"String.replace[..@.](Html.decode(\"parse2\":\\s?\"\\s?(.*?)[,\"]{1}.*,))",
-	"realUrl":"https://data.m3u8.in/api/api.php?from=qiyi&v={ItemUrlOrId}",
-	"realUrlRegex":"\"url\":\\s?\"(.*?)\"",
-	"realTrigger":"all"
+	"itemUrl":"http://156.242.10.185:8871/mogai_api.php/v1.vod/detailData?vod_id={SearchUrlOrId}&rel_limit=10",
+	"itemRangeRegex":"Unicode.decode(vod_play_list\":\\[([\\w\\W]*?)\\}\\])",
+	"itemRangeSplit":"\\[\\{",
+	"itemRangeSplitPick":"ffm3u8@lzm3u8",
+	"itemNameRegex":"Unicode.decode(([^\"]*?)\\$.*?[#\"])",
+	"itemUrlRegex":"Unicode.decode(\\$([^\"^#^\\s]*))",
+	"realUrl":"{ItemUrlOrId}",
+	"realTrigger":"contains[.m3u8@mp4]"
 },
 {
-	"configName":"光速(推荐)",
+	"configName":"徕米(app)",
 	"configType":"WebPage",
 	"extensions":"undetermined",
-	"itemApiRegex":"Unicode.decode(parse_api\":\"(.*?)\")",
-	"itemNameRegex":"Unicode.decode(([^\"]*?)\\$.*?[#\"])",
-	"itemRangeRegex":"Unicode.decode(code\":\"([\\w\\W]*?)])",
-	"itemUrl":"https://www.gsjtlxy.top/xgapp.php/v2/video_detail?id={SearchUrlOrId}",
-	"itemUrlRegex":"Unicode.decode(\\$([^\"^#^\\s]*))",
-	"realUrl":"{ItemApi}{ItemUrlOrId}",
-	"realUrlRegex":"url\":\"(.*?)\"",
+	"searchUrl":"http://go.laimi.org/apptov5/v1/search/lists?wd={SearchWord}&page=1&type=&__platform=android",
 	"searchNameRegex":"Unicode.decode(vod_name\":\"(.*?)\")",
 	"searchPictureRegex":"vod_pic\":\"(.*?)\"",
 	"searchStateRegex":"Unicode.decode(vod_remarks\":\"(.*?)\")",
 	"searchTypeRegex":"Unicode.decode(vod_class\":\"(.*?)\")",
-	"searchUrl":"https://www.gsjtlxy.top/xgapp.php/v2/search?pg=1&text={SearchWord}",
 	"searchUrlRegex":"vod_id\":(\\d*)",
-	"searchYearRegex":"vod_year\":\"(\\d*)"
+	"searchYearRegex":"vod_year\":\"(\\d*)",
+	"itemUrl":"http://go.laimi.org/apptov5/v1/vod/getVod?id={SearchUrlOrId}&__platform=android",
+	"itemRangeRegex":"Unicode.decode(vod_play_list\":([\\w\\W]*?)msg\":\"ok\"\\})",
+	"itemRangeSplit":"\\}\\],",
+	"itemRangeSplitPick":"qiyi@youku@mgtv@qq@ffm3u8",
+	"itemNameRegex":"name\":\"(.*?)\",\"url\":\".*?\",",
+	"itemUrlRegex":"name\":\".*?\",\"url\":\"(.*?)\",",
+	"realTrigger":"contains[html]",
+	"realUrl":"https://jx.jsonplayer.com/player/?url={ItemUrlOrId}"
+},
+{
+	"configName":"无名(app)",
+	"configType":"WebPage",
+	"extensions":"unknown",
+	"searchUrl":"http://mmmmmmmmmm.125ks.cn/api.php/app/search/?text={SearchWord}&page=1",
+	"searchRangeRegex":"",
+	"searchNameRegex":"Unicode.decode(vod_name\":\"(.*?)\")",
+	"searchUrlRegex":"vod_id\":(\\d*),",
+	"searchPictureRegex":"vod_pic\":\"(.*?)\"",
+	"searchTypeRegex":"Unicode.decode(type_name\":\"(.*?)\")",
+	"searchYearRegex":"Unicode.decode(vod_time_add\":\"(.*?)\")",
+	"searchStateRegex":"Unicode.decode(vod_remarks\":\"(.*?)\")",
+	"itemUrl":"http://mmmmmmmmmm.125ks.cn/api.php/app/video_detail/?id={SearchUrlOrId}",
+	"itemRangeRegex":"Unicode.decode(vod_url_with_player\":\\[\\{([\\w\\W]*?)\\}\\])",
+	"itemRangeSplit":"\\},\\{",
+	"itemRangeSplitPick":"爱奇艺@腾讯",
+	"itemNameRegex":"Unicode.decode(([^\"]*?)\\$.*?[#\"]{1})",
+	"itemUrlRegex":"[^\"]*?\\$(.*?)[#\"]{1}",
+#	"itemApiRegex":"Unicode.decode(parse_api\":\"(.*?)\")",
+	"realUrl":"https://jx.jsonplayer.com/player/?url={ItemUrlOrId}",
+	"sniffExcludeRegex":"https:?//nim.nosdn.127.net/.*?"
+#    "realUrl":"{ItemApi}{ItemUrlOrId}",
+#	"realUrlRegex":"\"url\": \"(.*?)\"",
+#	"realTrigger":"notContains[.m3u8]"
+},
+{
+	"configName":"蘑菇(app)",
+	"extensions":"unknown",
+	"configType":"WebPage",
+	"searchUrl":"http://vodapp.360anquan.stream/vodsearch/?vname={SearchWord}&abc=v2codeyvxdtcQ2xsKk",
+	"searchRangeRegex":"",
+	"searchNameRegex":"v_name\": \"(.*?)\",",
+	"searchUrlRegex":"v_id\": (\\d*),",
+	"searchPictureRegex":"v_pic\": \"(.*?)\",",
+	"searchTypeRegex":"",
+	"searchYearRegex":"v_publishyear\": (\\d*),",
+	"searchStateRegex":"",
+	"itemUrl":"http://vodapp.360anquan.stream/vodvidinfo/?vid={SearchUrlOrId}&abc=v2codeyvxdtcQ2xsKk",
+	"itemRangeRegex":"playdata\":([\\w\\W]*?)\\]\\}\\],",
+	"itemRangeSplit":"\\]\\}, \\{",
+	"itemRangeSplitPick":"origin奇艺视频@origin优酷视频@origin芒果视频@origin搜狐视频@origin腾讯视频@originlzm3u8@originffm3u8@origintkm3u8@originkuaikanyun",
+	"itemNameRegex":"num\": \"(.*?)\", \"reallink\": \".*?\"",
+	"itemApiRegex":"",
+	"itemUrlRegex":"num\": \".*?\", \"reallink\": \"(.*?)\"",
+	"realTrigger":"contains[html]",
+	"realUrl":"https://jx.jsonplayer.com/player/?url={ItemUrlOrId}",
+	"realApiRegex":"",
+	"realUrlRegex":"",
+	"realExtensionsRegex":"",
+	"finalUrl":"{RealUrlOrId}",
+	"sniffExcludeRegex":"",
+	"sniffTargetRegex":"(.*.mp4|.*.m3u8)",
+	"sniffTargetExtensions":"",
+	"sniffJavaScript":"",
+	"sniffPlayUrl":"{SniffOutUrl}"
 },
 {
 	"configName":"剧看看(推荐)",
@@ -171,6 +159,25 @@
 	"searchStateRegex":"<span class=\"pic-text text-right\">(.*?)</span> </a>",
 	"searchUrl":"POST:https://www.jukankan.me/vodsearch/-------------.html?PostBody={\"wd\":{SearchWord}}&submit=",
 	"searchUrlRegex":"<a class=\"stui-vodlist__thumb lazyload\" href=\"(.*?)\" title=\".*\" data-original=\".*\">"
+},
+{
+	"configName":"看剧啦(官解)",
+	"configType":"WebPage",
+	"extensions":"unknown",
+	"searchUrl":"https://www.kanjula.cn/search.php?wd={SearchWord}?Header={\"User-Agent\":\"Mozilla/5.0\"}",
+	"searchNameRegex":"String.replace[</b>,](<a class=\"stui-vodlist__thumb lazyload\" href=\".*\" target=\"_self\" title=\"<b>(.*?)\")",
+	"searchUrlRegex":"Html.decode(<a class=\"stui-vodlist__thumb lazyload\" href=\"(.*?)\" target=\".*?\" title=\"\\s*.*\\s*\")",
+	"searchPictureRegex":"data-original=\"(.*?)\">",
+	"searchStateRegex":"<span class=\"pic-text text-right\">(.*?)</span></a>",
+	"itemUrl":"{SearchUrlOrId}?Header={\"User-Agent\":\"Mozilla/5.0\"}",
+	"itemNameRegex":"<li><a href=\".*\" class=\"btn-play-source lipbtn\" title=\".*\">(.*?)</a></li>",
+	"itemUrlRegex":"Html.decode(<li><a href=\"(.*?)\" class=\"btn-play-source lipbtn\" title=\".*\">.*</a></li>)",
+	"realUrl":"https://jx.jsonplayer.com/player/?url={ItemUrlOrId}",
+	"sniffExcludeRegex":"https:?//nim.nosdn.127.net/.*?",
+	"sniffTargetRegex":"",
+	"sniffTargetExtensions":"",
+	"sniffJavaScript":"",
+	"sniffPlayUrl":"{SniffOutUrl}"
 },
 {
 	"configName":"达达猪(推荐)",
@@ -192,6 +199,92 @@
 	"searchUrlRegex":"<a href=\"(.*?)\"><strong>.*</strong></a>"
 },
 {
+	"configType":"WebPage",
+	"searchUrl":"https://www.freeok.me/index.php/ajax/suggest.html?mid=1&wd={SearchWord}?Header={\"cookie\":\"__51vuft__3GzndA8YPWvDtTXI=1712871370628\",\"cookie\":\"_funcdn_token=83da1c399eea3490f3e0b76997fb21c6d2041b6ae619c23aa1beeae327669e70\"}",
+	"searchNameRegex":"name\":\"(.*?)\"",
+	"searchUrlRegex":"id\":(\\d*),",
+	"searchPictureRegex":"pic\":\"(.*?)\"",
+	"itemUrl":"https://www.freeok.me/detail/{SearchUrlOrId}.html?Header={\"cookie\":\"__51vuft__3GzndA8YPWvDtTXI=1712871370628\",\"cookie\":\"_funcdn_token=83da1c399eea3490f3e0b76997fb21c6d2041b6ae619c23aa1beeae327669e70\"}",
+	"itemRangeRegex":"<div class=\"module-play-list\">([\\w\\W]*?)\\s*</div>\\s*</div>\\s*</div>",
+	"itemRangeSplit":"",
+	"itemRangeSplitPick":"anySource",
+	"itemNameRegex":"<a class=\"module-play-list-link\" href=\".*?\" title=\".*\"><span>(.*?)</span></a>",
+	"itemApiRegex":"",
+	"itemUrlRegex":"<a class=\"module-play-list-link\" href=\"(.*?)\" title=\".*\"><span>.*</span></a>",
+	"extensions":"unknown",
+	"realTrigger":"all,hasItemApi,notHasItemApi,contains[html],notContains[html]",
+	"realUrl":"{ItemApi}{ItemUrlOrId}",
+	"realApiRegex":"",
+	"realUrlRegex":"",
+	"realExtensionsRegex":"",
+	"finalUrl":"{RealUrlOrId}",
+	"configName":"Free(推荐)"
+},
+{
+	"configType":"WebPage",
+	"extensions":"unknown",
+	"searchUrl":"https://www.baipiaoys.com:9092/search.html?wd={SearchWord}",
+	"searchRangeRegex":"",
+	"searchNameRegex":"href=\".*\" title=\"(.*?)\" data-original=\".*\">",
+	"searchUrlRegex":"href=\"(.*?)\" title=\".*?\" data-original=\".*\">",
+	"searchPictureRegex":"href=\".*\" title=\".*\" data-original=\"(.*?)\">",
+	"searchTypeRegex":"类型：</span>(.*?)<span",
+	"searchYearRegex":"年份：</span>(\\d*)</span>",
+	"searchStateRegex":"<span class=\"pic-text text-right\">(.*?)</span></a>",
+	"itemUrl":"{SearchUrlOrId}",
+	"itemRangeRegex":"<ul class=\"stui-content__playlist clearfix\">([\\w\\W]*?)</ul>",
+	"itemRangeSplit":"",
+	"itemRangeSplitPick":"anySource",
+	"itemNameRegex":"<li><a href=\".*?\">(.*?)</a></li>",
+	"itemApiRegex":"",
+	"itemUrlRegex":"<li><a href=\"(.*?)\">.*?</a></li>",
+	"realTrigger":"all,hasItemApi,notHasItemApi,contains[html],notContains[html]",
+	"realUrl":"{ItemApi}{ItemUrlOrId}",
+	"realApiRegex":"",
+	"realUrlRegex":"",
+	"realExtensionsRegex":"",
+	"finalUrl":"{RealUrlOrId}",
+	"sniffExcludeRegex":"",
+	"sniffTargetRegex":"",
+	"sniffTargetExtensions":"",
+	"sniffJavaScript":"",
+	"sniffPlayUrl":"{SniffOutUrl}",
+	"configName":"白嫖(推荐)"
+},
+{
+	"configType":"WebPage",
+	"searchUrl":"POST:http://fagmn.com/search.php?PostBody={\"searchword\":\"{SearchWordNoEncryption}\"}",
+	"searchRangeRegex":"",
+	"searchNameRegex":"<h3 class=\"title\"><a href=\".*\">(.*?)</a></h3>",
+	"searchUrlRegex":"data-original=\".*?\" href=\"(.*?)\" title=\".*\">",
+	"searchPictureRegex":"data-original=\"(.*?)\" href=\".*?\" title=\".*\">",
+	"searchTypeRegex":"类型：</span><a href=\".*?\">(.*?)</a>",
+	"searchYearRegex":"年份：</span> <a href=\".*\">(\\d*)</a></span></p>",
+	"searchStateRegex":"<span class=\"pic-text text-right\">(.*?)</span></a>",
+	"itemUrl":"{SearchUrlOrId}",
+	"itemRangeRegex":"<ul class=\"stui-content__playlist clearfix\">([\\w\\W]*?)</ul>",
+	"itemRangeSplit":"",
+	"itemRangeSplitPick":"anySource",
+	"itemNameRegex":"<li><a href=\".*?\" title=\".*\">(.*?)</a></li>",
+	"itemApiRegex":"",
+	"itemUrlRegex":"<li><a href=\"(.*?)\" title=\".*\">.*?</a></li>",
+	"extensions":"unknown",
+	"playerBoot":"ExoPlayer,IjkPlayer,IjkMCCPlayer,AliPlayer",
+	"playPosition":"0L",
+	"realTrigger":"all,hasItemApi,notHasItemApi,contains[html],notContains[html]",
+	"realUrl":"{ItemApi}{ItemUrlOrId}",
+	"realApiRegex":"",
+	"realUrlRegex":"",
+	"realExtensionsRegex":"",
+	"finalUrl":"{RealUrlOrId}",
+	"sniffExcludeRegex":"",
+	"sniffTargetRegex":"",
+	"sniffTargetExtensions":"",
+	"sniffJavaScript":"",
+	"sniffPlayUrl":"{SniffOutUrl}",
+	"configName":"黑狐(推荐)"
+},
+{
 	"configName":"奇优(推荐)",
 	"configType":"WebPage",
 	"extensions":"unknown",
@@ -206,9 +299,103 @@
 	"searchPictureRegex":"data-original=\"(.*?)\"",
 	"searchStateRegex":"<span class=\"pic-text text-right\">(.*?)</span>",
 	"searchTypeRegex":"<span class=\"text-muted\">类型：</span>(.*?) <span class=\"split-line\"></span>",
-	"searchUrl":"POST:http://www.qiyoudy2.com/search.php?PostBody={\"searchword\":\"{SearchWordNoEncryption}\"}&Header={\"cookie\":\"Hm_lvt_2f22c59c782ed0477e5528daa2ada37f={Date10}\"}",
+	"searchUrl":"POST:http://www.qiyoudy4.com/search.php?PostBody={\"searchword\":\"{SearchWordNoEncryption}\"}&Header={\"cookie\":\"Hm_lvt_2f22c59c782ed0477e5528daa2ada37f={Date10}\"}",
 	"searchUrlRegex":"<h3 class=\"title\"><a href=\"(.*?)\">.*</a></h3>",
 	"searchYearRegex":"<span class=\"text-muted\">年份：</span> (\\d*?)</span></p>"
+},
+{
+	"configName":"爱看(推荐)",
+	"configType":"WebPage",
+	"extensions":"unknown",
+	"searchUrl":"https://www.ikyy.tv/v_search/-------------.html?wd={SearchWord}",
+	"searchNameRegex":"<a class=\"hl-item-thumb hl-lazy\" href=\".*?\" title=\"(.*?)\" data-original=\".*?\">",
+	"searchUrlRegex":"<a class=\"hl-item-thumb hl-lazy\" href=\"(.*?)\" title=\".*?\" data-original=\".*?\">",
+	"searchPictureRegex":"String.replace[=@http://](data-original=\".*?src(.*?)\">)",
+	"searchStateRegex":"<span class=\"hl-lc-1 remarks\">(.*?)</span>",
+	"searchTypeRegex":"<em>(.*?)</em>&nbsp;",
+	"searchYearRegex":"<em>.*?</em>&nbsp;·&nbsp;(\\d*)&nbsp;·&nbsp;",
+	"itemUrl":"{SearchUrlOrId}",
+	"itemRangeRegex":"",
+	"itemNameRegex":"<li class=\"hl-col-xs-4 hl-col-sm-2\"><a href=\".*?\">(.*?)</a></li>",
+	"itemUrlRegex":"<li class=\"hl-col-xs-4 hl-col-sm-2\"><a href=\"(.*?)\">.*?</a></li>"
+},
+{
+	"configName":"毒蛇(推荐)",
+	"configType":"WebPage",
+	"extensions":"unknown",
+	"searchUrl":"https://www.dushe9.app/search?os=pc&k={SearchWord}",
+	"searchNameRegex":"<div class=\"title\">\\s*(.*?)\\s*</div>",
+	"searchUrlRegex":"<a href=\"(.*?)\" class=\"search-result-item\">",
+	"searchPictureRegex":"String.replace[/vod1/@https://vres.miximixi.me/vod1/](<img class=\"lazy lazyload\" data-original=\"(.*?)\" alt=\".*\" title=\".*\")",
+	"searchStateRegex":"",
+	"searchTypeRegex":"<span>.*</span>.*?\\s*<span>(.*?)</span>",
+	"searchYearRegex":"<div class=\"tags\">\\s*<span>(\\d*)</span>",
+	"itemUrl":"{SearchUrlOrId}",
+	"itemRangeRegex":"<div class=\"episode-list\" style=\"\">([\\w\\W]*?)</div>",
+	"itemNameRegex":"<a href=\".*?\" class=\"episode-item\">(.*?)</a>",
+	"itemUrlRegex":"<a href=\"(.*?)\" class=\"episode-item\">.*?</a>"
+},
+{
+	"configName":"VidHub",
+	"configType":"WebPage",
+	"extensions":"unknown",
+	"searchUrl":"https://vidhub1.cc/index.php/ajax/suggest?mid=1&wd={SearchWord}",
+	"searchRangeRegex":"",
+	"searchNameRegex":"name\":\"(.*?)\"",
+	"searchUrlRegex":"\"id\":(\\d*?),",
+	"searchPictureRegex":"pic\":\"(.*?)\"",
+	"itemUrl":"https://vidhub1.cc/voddetail/{SearchUrlOrId}.html",
+	"itemRangeRegex":"<div class=\"sort-item\" id=\"sort-item-1\">([\\w\\W]*?)</div>\\s*</div>\\s*</div>\\s*</div>\\s*</div>",
+	"itemNameRegex":"<a href=\".*?\" title=\".*?\"><span>(.*?)</span></a>",
+	"itemUrlRegex":"<a href=\"(.*?)\" title=\".*?\"><span>.*?</span></a>"
+},
+{
+	"configName":"Nike",
+	"configType":"WebPage",
+	"extensions":"unknown",
+	"searchUrl":"https://www.ajeee.com/search.html?wd={SearchWord}",
+	"searchRangeRegex":"",
+	"searchNameRegex":"<a rel=\"nofollow\" href=\".*?\"><strong>(.*?)</strong></a>",
+	"searchUrlRegex":"<a rel=\"nofollow\" href=\"(.*?)\"><strong>.*?</strong></a>",
+	"searchPictureRegex":"<img class=\"lazy lazyload\" data-original=\"(.*?)\" alt=\".*?\"",
+	"searchTypeRegex":"<div class=\"module-card-item-class\">\\s*(.*?)\\s*</div>",
+	"searchYearRegex":"<div class=\"module-info-item-content\">\\s*(\\d*)\\s*<span",
+	"searchStateRegex":"<div class=\"module-item-note\">\\s*(.*?)\\s*</div>",
+	"itemUrl":"{SearchUrlOrId}",
+	"itemRangeRegex":"<div class=\"module-list sort-list tab-list his-tab-list\" id=\"panel1\">([\\w\\W]*?)\\s*</div>\\s*</div>\\s*</div>\\s*</div>",
+	"itemRangeSplit":"\\s*</div>\\s*</div>\\s*</div>",
+	"itemRangeSplitPick":".*?-1-.*?.html@.*?-2-.*?.html@.*?-3-.*?.html@.*?-4-.*?.html@/.*?-5-.*?.html",
+	"itemNameRegex":"<a rel=\"nofollow\" class=\"module-play-list-link\" href=\".*?\" title=\".*?\"><span>(.*?)</span></a>",
+	"itemApiRegex":"",
+	"itemUrlRegex":"<a rel=\"nofollow\" class=\"module-play-list-link\" href=\"(.*?)\" title=\".*?\"><span>.*?</span></a>"
+},
+{
+	"configName":"五五五",
+	"configType":"WebPage",
+	"extensions":"unknown",
+	"searchUrl":"https://555flim.top/index.php/ajax/suggest?mid=1&wd={SearchWord}",
+	"searchRangeRegex":"",
+	"searchNameRegex":"name\":\"(.*?)\"",
+	"searchUrlRegex":"\"id\":(\\d*?),",
+	"searchPictureRegex":"pic\":\"(.*?)\"",
+	"itemUrl":"https://555flim.top/voddetail/{SearchUrlOrId}.html",
+	"itemRangeRegex":"<div class=\"module-play-list\">([\\w\\W]*?)</div>\\s*</div>\\s*</div>",
+	"itemNameRegex":"<a class=\"module-play-list-link\" href=\".*?\" title=\".*?\"><span>(.*?)</span></a>",
+	"itemUrlRegex":"<a class=\"module-play-list-link\" href=\"(.*?)\" title=\".*?\"><span>.*?</span></a>"
+},
+{
+	"configName":"大米星",
+	"configType":"WebPage",
+	"extensions":"unknown",
+	"searchUrl":"https://dmflm.com/index.php/ajax/suggest?mid=1&wd={SearchWord}",
+	"searchRangeRegex":"",
+	"searchNameRegex":"name\":\"(.*?)\"",
+	"searchUrlRegex":"\"id\":(\\d*?),",
+	"searchPictureRegex":"pic\":\"(.*?)\"",
+	"itemUrl":"https://dmflm.com/voddetail/{SearchUrlOrId}.html",
+	"itemRangeRegex":"<div class=\"module-play-list\">([\\w\\W]*?)</div>\\s*</div>\\s*</div>",
+	"itemNameRegex":"<a class=\"module-play-list-link\" href=\".*?\" title=\".*?\"><span>(.*?)</span></a>",
+	"itemUrlRegex":"<a class=\"module-play-list-link\" href=\"(.*?)\" title=\".*?\"><span>.*?</span></a>"
 },
 {
 	"configName":"达达龟",
@@ -225,21 +412,52 @@
 	"searchUrlRegex":"<a class=\"stui-vodlist__thumb lazyload\" href=\"(.*?)\" title=\".*\""
 },
 {
-	"configName":"短剧②",
+	"configName":"极品",
+	"configType":"WebPage",
+	"extensions":"undetermined",
+	"searchUrl":"https://api.1080zyku.com/inc/ldg_api_all.php?wd={SearchWord}",
+	"searchRangeRegex":"",
+	"searchNameRegex":"<name><!\\[CDATA\\[(.*?)\\]\\]\\>",
+	"searchUrlRegex":"<id>\\s*(\\d*)\\s*</id>",
+	"searchPictureRegex":"",
+	"searchTypeRegex":"<type>\\s*(.*?)\\s*</type>",
+	"searchYearRegex":"<last>\\s*(.*?)\\s*</last>",
+	"searchStateRegex":"<note\\><!\\[CDATA\\[(.*?)\\]\\]\\>",
+	"itemUrl":"https://api.1080zyku.com/inc/ldg_api_all.php?ac=videolist&ids={SearchUrlOrId}",
+	"itemRangeRegex":"<dl>([\\w\\W]*)</dl>",
+	"itemRangeSplit":"</dd>",
+	"itemRangeSplitPick":"1080zyk@zykyun@ukyun@ukm3u8",
+	"itemNameRegex":"(\\d*\\w*?)\\$https.*?",
+	"itemApiRegex":"",
+	"itemUrlRegex":"[\\d*\\w*].*?\\$(https:?//.*?)\\$"
+},
+{
+	"configName":"乐视",
 	"configType":"WebPage",
 	"extensions":"unknown",
-	"searchUrl":"https://duanju.one/vodsearch/-------------.html?wd={SearchWord}",
-	"searchCache":"aways,close,1day,1hour",
+	"searchUrl":"https://www.leshizy1.com/index.php/ajax/suggest?mid=1&wd={SearchWord}&limit=9999",
 	"searchRangeRegex":"",
-	"searchNameRegex":"<h3><a href=\".*\" title=\".*\">(.*?)</a></h3>",
-	"searchUrlRegex":"<h3><a href=\"(.*?)\" title=\".*\">.*</a></h3>",
-	"searchPictureRegex":"data-src=\"(.*?)\"",
-	"searchStateRegex":"<a class=\"video-serial\" href=\".*\" title=\".*\">(.*?)</a>",
-	"searchTypeRegex":"<a href=\".*\" target=\"_blank\">(.*?)</a>&nbsp;\\s*\\S*</div>\\s*\\S*</div>",
-	"searchYearRegex":"<a href=\".*\" target=\"_blank\">(\\d*)</a>&nbsp;",
-	"itemRangeRegex":"<div class=\"sort-item\" id=\"sort-item-1\">([\\w\\W]*?)\\s*?\\S*?</div>",
-	"itemNameRegex":"<a href=\".*\" title=\".*\"><span>(.*?)</span>.*?</a>",
-	"itemUrlRegex":"<a href=\"(.*?)\" title=\".*\"><span>.*</span>.*?</a>"
+	"searchNameRegex":"name\":\"(.*?)\"",
+	"searchUrlRegex":"\"id\":(\\d*?),",
+	"searchPictureRegex":"pic\":\"(.*?)\"",
+	"itemUrl":"https://www.leshizy1.com/index.php/vod/detail/id/{SearchUrlOrId}.html",
+	"itemRangeRegex":"",
+	"itemNameRegex":"<a class=\"col play-item copy_text\">(.*?)\\$<span class=\"hidden-xs\">.*?</span></a>",
+	"itemUrlRegex":"<a class=\"col play-item copy_text\">.*?\\$<span class=\"hidden-xs\">(.*?)</span></a>"
+},
+{
+	"configName":"豪华(Mac)",
+	"configType":"MacCMS",
+	"extensions":"unknown",
+	"matchSource":"anySource",
+	"searchUrl":"https://hhzyapi.com/api.php/provide/vod/?ac=detail&wd={SearchWord}"
+},
+{
+	"configName":"百度(Mac)",
+	"configType":"MacCMS",
+	"extensions":"undetermined",
+	"matchSource":"anySource",
+	"searchUrl":"https://api.apibdzy.com/api.php/provide/vod/?ac=detail&wd={SearchWord}"
 },
 {
 	"configName":"非凡(Mac)",
@@ -256,6 +474,13 @@
 	"searchUrl":"https://www.feisuzy.com/api.php/provide/vod/from/fsm3u8/?ac=detail&wd={SearchWord}"
 },
 {
+	"configName":"飞速②(Mac)",
+	"configType":"MacCMS",
+	"extensions":"undetermined",
+	"matchSource":"anySource",
+	"searchUrl":"https://www.feisuzyapi.com/api.php/provide/vod/from/fsm3u8/?ac=detail&wd={SearchWord}"
+},
+{
 	"configName":"U酷(Mac)",
 	"configType":"MacCMS",
 	"extensions":"undetermined",
@@ -270,13 +495,6 @@
 	"searchUrl":"https://m3u8.apiyhzy.com/api.php/provide/vod/from/yhm3u8/?ac=detail&wd={SearchWord}?Header={\"User-Agent\":\"{WebViewUserAgent}\"}"
 },
 {
-	"configName":"新浪(Mac)",
-	"configType":"MacCMS",
-	"extensions":"undetermined",
-	"matchSource":"anySource",
-	"searchUrl":"http://api.xinlangapi.com/xinlangapi.php/provide/vod/from/xlm3u8/?ac=detail&wd={SearchWord}"
-},
-{
 	"configName":"卧龙(Mac)",
 	"configType":"MacCMS",
 	"extensions":"undetermined",
@@ -289,13 +507,6 @@
 	"extensions":"undetermined",
 	"matchSource":"anySource",
 	"searchUrl":"https://www.wolongzyw.com/api.php/provide/vod?ac=detail&wd={SearchWord}"
-},
-{
-	"configName":"可可(Mac)",
-	"configType":"MacCMS",
-	"extensions":"undetermined",
-	"matchSource":"anySource",
-	"searchUrl":"https://caiji.kekezyapi.com/api.php/provide/vod/?ac=detail&wd={SearchWord}"
 },
 {
 	"configName":"天空(Mac)",
@@ -319,47 +530,11 @@
 	"searchUrl":"https://cj.lziapi.com/api.php/provide/vod/from/lzm3u8/?ac=detail&wd={SearchWord}"
 },
 {
-	"configName":"闪电(Mac)",
-	"configType":"MacCMS",
-	"extensions":"undetermined",
-	"matchSource":"anySource",
-	"searchUrl":"https://sdzyapi.com/api.php/provide/vod/from/sdm3u8/?ac=detail&wd={SearchWord}"
-},
-{
-	"configName":"红牛(Mac)",
-	"configType":"MacCMS",
-	"extensions":"undetermined",
-	"matchSource":"anySource",
-	"searchUrl":"https://www.hongniuzy2.com/api.php/provide/vod/from/hnm3u8/?ac=detail&wd={SearchWord}"
-},
-{
 	"configName":"无尽(Mac)",
 	"configType":"MacCMS",
 	"extensions":"undetermined",
 	"matchSource":"anySource",
 	"searchUrl":"https://api.wujinapi.com/api.php/provide/vod/from/wjm3u8/?ac=detail&wd={SearchWord}"
-},
-{
-	"configName":"达人(Mac)",
-	"configType":"MacCMS",
-	"extensions":"unknown",
-	"matchSource":"anySource",
-	"realUrl":"https://jx.jsonplayer.com/player/?url={ItemUrlOrId}",
-	"searchUrl":"http://vipmv.cc/api.php/provide/vod?ac=videolist&wd={SearchWord}"
-},
-{
-	"configName":"索尼(Mac)",
-	"configType":"MacCMS",
-	"extensions":"undetermined",
-	"matchSource":"anySource",
-	"searchUrl":"https://suoniapi.com/api.php/provide/vod/?ac=detail&wd={SearchWord}"
-},
-{
-	"configName":"快帆(Mac)",
-	"configType":"MacCMS",
-	"extensions":"undetermined",
-	"matchSource":"anySource",
-	"searchUrl":"https://api.kuaifan.tv/api.php/provide/vod?ac=detail&wd={SearchWord}"
 },
 {
 	"configName":"印迷(Mac)",
@@ -397,7 +572,7 @@
 	"searchUrl":"https://jyzyapi.com/provide/vod?ac=detail&wd={SearchWord}"
 },
 {
-	"configName":"快车二(Mac)",
+	"configName":"快车②(Mac)",
 	"configType":"MacCMS",
 	"extensions":"unknown",
 	"matchSource":"anySource",
@@ -418,35 +593,11 @@
 "searchUrl":"https://49zyw.com/api.php/provide/vod/?ac=detail&wd={SearchWord}"
 },
 {
-"configName":"虎牙(Mac)",
-"configType": "MacCMS",
-"extensions": "unknown",
-"matchSource":"anySource",
-"searchUrl":"https://www.huyaapi.com/api.php/provide/vod/?ac=detail&wd={SearchWord}"
-
-},
-{
 "configName":"速播(Mac)",
 "configType": "MacCMS",
 "extensions": "unknown",
 "matchSource":"anySource",
 "searchUrl":"https://subocaiji.com/api.php/provide/vod/?ac=detail&wd={SearchWord}"
-
-},
-{
-"configName":"大漠(Mac)",
-"configType": "MacCMS",
-"extensions": "unknown",
-"matchSource":"anySource",
-"searchUrl":"https://damozy.com/api.php/provide/vod/?ac=detail&wd={SearchWord}"
-
-},
-{
-"configName":"极光(Mac)",
-"configType": "MacCMS",
-"extensions": "unknown",
-"matchSource":"anySource",
-"searchUrl":"https://jiguang.pro/api.php/provide/vod/?ac=detail&wd={SearchWord}"
 
 },
 {
@@ -479,26 +630,11 @@
 	"searchUrl":"https://api.ylzy.me/api.php/provide/vod/?ac=detail&wd={SearchWord}"
 },
 {
-	"configName":"夸克(Mac)",
-	"configType":"MacCMS",
-	"extensions":"undetermined",
-	"matchSource":"anySource",
-	"searchUrl":"https://kuakezy1.com/api.php/provide/vod/from/M3U8kuake/?ac=detail&wd={SearchWord}"
-},
-{
 	"configName":"淘片(Mac)",
 	"configType":"MacCMS",
 	"extensions":"unknown",
 	"matchSource":"anySource",
 	"searchUrl":"https://taopianapi.com/cjapi/mc/vod/json?ac=detail&wd={SearchWord}"
-},
-{
-	"configName":"天堂(Mac)",
-	"configType":"MacCMS",
-	"extensions":"unknown",
-	"matchSource":"anySource",
-	"searchUrl":"http://vipmv.cc/api.php/provide/vod?ac=detail&wd={SearchWord}",
-	"realUrl":"https://jx.jsonplayer.com/player/?url={ItemUrlOrId}"
 },
 {
 	"configName":"最大(Mac)",
@@ -514,7 +650,6 @@
 	"matchSource":"anySource",
 	"searchUrl":"https://www.911ysw.top/tianyi.php/provide/vod?ac=detail&wd={SearchWord}"
 },
-
 {
 	"configName":"TvYb(Mac)",
 	"configType":"MacCMS",
@@ -567,8 +702,9 @@
 	},
 #解析接口
 	"analysisApi":{
-"思古":{
+"思古解析":{
 	"apiUrl":"https://jx.jsonplayer.com/player/?url={ItemUrlOrId}",
+	"sniffExcludeRegex":"https:?//nim.nosdn.127.net/.*?",
 	"apiSupport":[
 		"iqiyi",
 		"qq",
@@ -582,6 +718,23 @@
 		"miguvideo",
 		"ixigua"
 	]
+},
+"JY解析":{
+	"apiSupport":[
+		"iqiyi",
+		"qq",
+		"youku",
+		"mgtv",
+		"sohu",
+		"cctv",
+		"bilibili",
+		"pptv",
+		"1905",
+		"miguvideo",
+		"ixigua"
+	],
+	"apiUrl":"https://jx.playerjy.com/?ads=0&url={ItemUrlOrId}",
+	"sniffExcludeRegex":"https:?//nim.nosdn.127.net/.*?"
 },
 "剖云解析":{
 	"apiSupport":[
@@ -597,9 +750,27 @@
 		"miguvideo",
 		"ixigua"
 	],
-	"apiUrl":"https://www.pouyun.com/?url={ItemUrlOrId}"
+	"apiUrl":"https://www.pouyun.com/?url={ItemUrlOrId}",
+	"sniffExcludeRegex":"https:?//nim.nosdn.127.net/.*?"
 },
-"JSON解析":{
+"m3u8解析":{
+	"apiSupport":[
+		"iqiyi",
+		"qq",
+		"youku",
+		"mgtv",
+		"sohu",
+		"cctv",
+		"bilibili",
+		"pptv",
+		"1905",
+		"miguvideo",
+		"ixigua"
+	],
+	"apiUrl":"https://jx.m3u8.tv/jiexi/?url={ItemUrlOrId}",
+	"sniffExcludeRegex":"https:?//nim.nosdn.127.net/.*?"
+},
+"洋图解析":{
 	"apiSupport":[
 		"qq",
 		"腾讯",
@@ -620,9 +791,10 @@
 		"哔哩哔哩",
 		"哔哩"
 	],
-	"apiUrl":"https://jx.m3u8.tv/jiexi/?url={ItemUrlOrId}"
+	"apiUrl":"https://jx.yangtu.top/?url={ItemUrlOrId}",
+	"sniffExcludeRegex":"https:?//nim.nosdn.127.net/.*?"
 },
-"虾米":{
+"虾米解析":{
 	"apiSupport":[
 		"iqiyi",
 		"qq",
@@ -636,9 +808,36 @@
 		"miguvideo",
 		"ixigua"
 	],
-	"apiUrl":"https://jx.xmflv.com/?url={ItemUrlOrId}"
+	"apiUrl":"https://jx.xmflv.com/?url={ItemUrlOrId}",
+	"sniffExcludeRegex":"https:?//nim.nosdn.127.net/.*?"
 },
-"爱酷":{
+"小鱼解析":{
+	"apiSupport":[
+		"qq",
+		"腾讯",
+		"qiyi",
+		"iqiyi",
+		"爱奇艺",
+		"奇艺",
+		"youku",
+		"优酷",
+		"mgtv",
+		"芒果",
+		"letv",
+		"乐视",
+		"pptv",
+		"PPTV",
+		"sohu",
+		"bilibili",
+		"哔哩哔哩",
+		"哔哩"
+	],
+	"apiUrl":"http://json.84jia.com/home/api?type=ys&uid=335253&key=demprsyzBMQRVY0234&url={ItemUrlOrId}",
+	"realExtensionsRegex":"\"type\":\\s?\"(.*?)\",",
+	"realUrlRegex":"\"url\":\\s?\"(.*?)\",",
+	"sniffExcludeRegex":"https:?//nim.nosdn.127.net/.*?"
+},
+"麒麟解析":{
 	"apiSupport":[
 		"iqiyi",
 		"qq",
@@ -652,9 +851,9 @@
 		"miguvideo",
 		"ixigua"
 	],
-	"apiUrl":"https://jx.zhanlangbu.com/?url={ItemUrlOrId}"
+	"apiUrl":"https://t1.qlplayer.cyou/player/?url={ItemUrlOrId}"
 },
-"全看":{
+"全看解析":{
 	"apiSupport":[
 		"iqiyi",
 		"qq",
@@ -670,7 +869,7 @@
 	],
 	"apiUrl":"https://jx.quankan.app/?url={ItemUrlOrId}"
 },
-"夜幕":{
+"夜幕解析":{
 	"apiSupport":[
 		"qq",
 		"腾讯",
@@ -693,28 +892,22 @@
 	],
 	"apiUrl":"https://www.yemu.xyz/?url={ItemUrlOrId}"
 },
-"艾豆儿":{
+"爱豆解析":{
 	"apiSupport":[
-		"qq",
-		"腾讯",
-		"qiyi",
 		"iqiyi",
-		"爱奇艺",
-		"奇艺",
+		"qq",
 		"youku",
-		"优酷",
 		"mgtv",
-		"芒果",
-		"letv",
-		"乐视",
-		"pptv",
-		"PPTV",
 		"sohu",
+		"cctv",
 		"bilibili",
-		"哔哩哔哩",
-		"哔哩"
+		"pptv",
+		"1905",
+		"miguvideo",
+		"ixigua"
 	],
-	"apiUrl":"https://jx.xyflv.cc/?url={ItemUrlOrId}"
+	"apiUrl":"https://jx.xyflv.cc/?url={ItemUrlOrId}",
+	"sniffExcludeRegex":"https:?//nim.nosdn.127.net/.*?"
 },
 "8090":{
 	"apiSupport":[
@@ -853,65 +1046,6 @@
 		"miguvideo",
 		"ixigua"
 	]
-},
-"虾米2":{
-	"apiUrl":"https://jxdp.codermart.net/?url={ItemUrlOrId}",
-	"apiSupport":[
-		"iqiyi",
-		"qq",
-		"youku",
-		"mgtv",
-		"sohu",
-		"cctv",
-		"bilibili",
-		"pptv",
-		"1905",
-		"miguvideo",
-		"ixigua"
-	]
-},
-"爱酷":{
-	"apiUrl":"http://www.ikukk.com/?ac=1&url={ItemUrlOrId}",
-	"apiSupport":[
-		"iqiyi",
-		"qq",
-		"youku",
-		"mgtv",
-		"sohu",
-		"cctv",
-		"pptv",
-		"1905",
-		"miguvideo",
-		"ixigua"
-	]
-},
-"全民":{
-	"apiSupport":[
-		"qiyi",
-		"iqiyi",
-		"imgo",
-		"爱奇艺",
-		"奇艺",
-		"qq",
-		"腾讯",
-		"youku",
-		"优酷",
-		"pptv",
-		"PPTV",
-		"letv",
-		"乐视",
-		"leshi",
-		"bilibili",
-		"哔哩哔哩",
-		"哔哩",
-		"mgtv",
-		"芒果",
-		"sohu",
-		"xigua",
-		"fun",
-		"风行"
-	],
-	"apiUrl":"http://api.wpsseo.cn/?v={ItemUrlOrId}"
 },		
 "左岸":{
 	"apiUrl":"https://jx.nnxv.cn/tv.php?url={ItemUrlOrId}",
@@ -947,13 +1081,31 @@
 
 	},
 #跳过
-	"sniffUrlSkip":{
-		"https://m.ixigua.com/i6802476259302441479/":{
-			"skipUrl":"http://yuledy.helanzuida.com/20200320/708_a2986d1c/index.m3u8"
+	"videoManager":{
+		".*(bfzy|s5.bfzycdn)+.*":{
+			"m3u8AdRule":"#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:3,[\\s\\S]*?#EXT-X-DISCONTINUITY"
 		},
-		"https://www.iqiyi.com/v_tjru6f49h8.html?vfm=m_502_sgss&fv=p_05_01&fv=bf562ffc1cd15119":{
-			"skipUrl":"https://cache2.jhdyw.vip:8090/jianghu/iqiyi/66bdc9e3bd9679ae5afe7ba9aae49b87.m3u8"
-		}
+		".*(vip.123pan.cn|rescdn.wuxivlog.cn)+.*":{
+			"m3u8AdRule":"(#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:20.840000,[\\s\\S]*?#EXT-X-DISCONTINUITY|#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:10.120000,[\\s\\S]*?#EXT-X-DISCONTINUITY|#EXTINF.*?\\s+.*?1o.*?\\.ts\\s+)"
+		},
+		".*(vip.ffzy-online1)+.*":{
+			"m3u8AdRule":"(#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:5.760000,[\\s\\S]*?#EXT-X-DISCONTINUITY|#EXTINF.*?\\s+.*?1o.*?.ts\\s+)"
+		},
+		".*(vip.lz-cdn6.com)+.*":{
+	"m3u8AdRule":"(#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:7.041667,[\\s\\S]*?#EXT-X-DISCONTINUITY)"
+		},
+		".*(vip.ffzy|hd.ffzy)+.*":{
+			"m3u8AdRule":"(#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:6.666667,[\\s\\S]*?#EXT-X-DISCONTINUITY|#EXTINF.*?\\s+.*?1o.*?\\.ts\\s+)"
+		},
+		".*(vip.lz|hd.lz|v.cdnlz)+.*":{
+			"m3u8AdRule":"(#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:6.433333,[\\s\\S]*?#EXT-X-DISCONTINUITY|#EXTINF.*?\\s+.*?1o.*?\\.ts\\s+)"
+		},
+	".*(v.cdnlz2.com)+.*":{
+			"m3u8AdRule":"(#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:5.720000,[\\s\\S]*?#EXT-X-DISCONTINUITY|#EXTINF.*?\\s+.*?1o.*?.ts\\s+)"
+		},
+		".*(yzzy.play-cdn2|vip.lz-cdn6.com|yzzy.play-cdn6.com|play-cdn2.com)+.*":{
+		"m3u8AdRule":"(#EXT-X-DISCONTINUITY\\r*\\n*#EXTINF:7.041667,[\\s\\S]*?#EXT-X-DISCONTINUITY)"
+	}	
 	},
 	"televisionList":[
 		{
